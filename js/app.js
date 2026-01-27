@@ -106,18 +106,41 @@ function showScreen(screenName) {
 // OFFICE INTERACTIONS
 // =========================================
 function initOfficeInteractions() {
-    const clickables = document.querySelectorAll('.office-scene .clickable');
-
-    clickables.forEach(element => {
-        element.addEventListener('click', (e) => {
+    // Handle hotspot clicks (furniture items)
+    const hotspots = document.querySelectorAll('.hotspot');
+    hotspots.forEach(hotspot => {
+        hotspot.addEventListener('click', (e) => {
             e.stopPropagation();
-            const item = element.dataset.item;
+            const item = hotspot.dataset.item;
 
             if (item === 'monitor') {
                 showScreen('hiremos');
             } else if (CONVERSATIONS[item]) {
                 openDialog(item);
             }
+        });
+    });
+
+    // Handle cat clicks (The Huckleberries)
+    const cats = document.querySelectorAll('.cat-container');
+    cats.forEach(cat => {
+        cat.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const item = cat.dataset.item;
+
+            if (CONVERSATIONS[item]) {
+                openDialog(item);
+            }
+        });
+    });
+
+    // Add hover sounds/effects to hotspots
+    hotspots.forEach(hotspot => {
+        hotspot.addEventListener('mouseenter', () => {
+            hotspot.querySelector('.hotspot-label')?.classList.add('visible');
+        });
+        hotspot.addEventListener('mouseleave', () => {
+            hotspot.querySelector('.hotspot-label')?.classList.remove('visible');
         });
     });
 }
