@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashley Sepers | Interactive Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Boot Screen -->
+    <div id="boot-screen" class="screen active">
+        <div class="boot-container">
+            <div class="boot-text">
+                <div class="boot-line">AshleyOS v2.0</div>
+                <div class="boot-line">Copyright (c) 2025 Ashley Sepers</div>
+                <div class="boot-line">&nbsp;</div>
+                <div class="boot-line">Loading portfolio experience...</div>
+                <div class="boot-line">&nbsp;</div>
+                <div class="boot-progress">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="boot-line boot-status">Initializing office environment...</div>
+            </div>
+            <div class="boot-prompt" style="display: none;">
+                <span class="blink">Press any key to continue_</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Office Scene -->
+    <div id="office-screen" class="screen">
+        <div class="office-scene">
+            <!-- Background Layer -->
+            <div class="office-background">
+                <!-- Wall -->
+                <div class="wall"></div>
+                <!-- Floor -->
+                <div class="floor"></div>
+            </div>
+
+            <!-- Furniture Layer -->
+            <div class="furniture-layer">
+                <!-- Wall Unit / Bookshelf -->
+                <div class="clickable bookshelf" data-item="bookshelf" title="Bookshelf">
+                    <div class="bookshelf-frame">
+                        <div class="shelf">
+                            <div class="book book-1"></div>
+                            <div class="book book-2"></div>
+                            <div class="book book-3"></div>
+                            <div class="book book-4"></div>
+                        </div>
+                        <div class="shelf">
+                            <div class="book book-5"></div>
+                            <div class="book book-6"></div>
+                            <div class="trinket"></div>
+                            <div class="book book-7"></div>
+                        </div>
+                        <div class="shelf">
+                            <div class="photo-frame"></div>
+                            <div class="book book-8"></div>
+                            <div class="plant-small"></div>
+                        </div>
+                    </div>
+                    <div class="hover-indicator">Testimonials</div>
+                </div>
+
+                <!-- Desk with Monitor -->
+                <div class="desk-area">
+                    <div class="desk">
+                        <div class="clickable monitor" data-item="monitor" title="Computer">
+                            <div class="monitor-frame">
+                                <div class="monitor-screen">
+                                    <div class="screen-content">
+                                        <div class="screen-text">HireMeOS</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="monitor-stand"></div>
+                            <div class="hover-indicator">Enter Computer</div>
+                        </div>
+                        <div class="clickable coffee-mug" data-item="coffee" title="Coffee Mug">
+                            <div class="mug"></div>
+                            <div class="steam">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="hover-indicator">Coffee Break</div>
+                        </div>
+                        <div class="keyboard"></div>
+                    </div>
+                    <div class="desk-chair">
+                        <div class="chair-back"></div>
+                        <div class="chair-seat"></div>
+                    </div>
+                </div>
+
+                <!-- Cozy Chair -->
+                <div class="clickable cozy-chair" data-item="chair" title="Cozy Chair">
+                    <div class="armchair">
+                        <div class="chair-cushion"></div>
+                        <div class="chair-arm left"></div>
+                        <div class="chair-arm right"></div>
+                    </div>
+                    <div class="hover-indicator">Interview Me</div>
+                </div>
+
+                <!-- Radio -->
+                <div class="clickable radio" data-item="radio" title="Radio">
+                    <div class="radio-body">
+                        <div class="radio-speaker"></div>
+                        <div class="radio-dial"></div>
+                        <div class="radio-buttons">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="hover-indicator">Music</div>
+                </div>
+
+                <!-- Art on Wall -->
+                <div class="clickable wall-art" data-item="art" title="Wall Art">
+                    <div class="frame">
+                        <div class="art-content"></div>
+                    </div>
+                    <div class="hover-indicator">Philosophy</div>
+                </div>
+
+                <!-- Window -->
+                <div class="window-frame">
+                    <div class="window-pane">
+                        <div class="window-light"></div>
+                    </div>
+                </div>
+
+                <!-- The Huckleberries (Cats) -->
+                <div class="clickable cat gherkin" data-item="gherkin" title="Gherkin">
+                    <div class="cat-body short-hair">
+                        <div class="cat-head">
+                            <div class="ear left"></div>
+                            <div class="ear right"></div>
+                            <div class="face">
+                                <div class="eyes"><span></span><span></span></div>
+                            </div>
+                        </div>
+                        <div class="cat-torso"></div>
+                        <div class="cat-tail"></div>
+                    </div>
+                    <div class="hover-indicator">Gherkin</div>
+                </div>
+
+                <div class="clickable cat gertrude" data-item="gertrude" title="Gertrude">
+                    <div class="cat-body long-hair">
+                        <div class="cat-head">
+                            <div class="ear left"></div>
+                            <div class="ear right"></div>
+                            <div class="fluff"></div>
+                            <div class="face">
+                                <div class="eyes"><span></span><span></span></div>
+                            </div>
+                        </div>
+                        <div class="cat-torso"></div>
+                        <div class="cat-tail fluffy"></div>
+                    </div>
+                    <div class="hover-indicator">Gertrude</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation Bar -->
+        <div class="nav-bar">
+            <div class="location-name">Ashley's Office</div>
+            <div class="nav-buttons">
+                <button class="nav-btn" data-action="resume">RESUME</button>
+                <button class="nav-btn" data-action="about">ABOUT</button>
+                <button class="nav-btn" data-action="contact">CONTACT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dialog Box (Oregon Trail II Style) -->
+    <div id="dialog-overlay" class="dialog-overlay">
+        <div class="dialog-box">
+            <div class="dialog-header">
+                <span class="dialog-title">Conversation</span>
+                <button class="dialog-close">&times;</button>
+            </div>
+            <div class="dialog-content">
+                <div class="dialog-portrait">
+                    <img src="assets/photos/default.jpg" alt="Ashley" id="dialog-photo">
+                </div>
+                <div class="dialog-text">
+                    <p id="dialog-message"></p>
+                </div>
+            </div>
+            <div class="dialog-choices" id="dialog-choices">
+                <!-- Choices populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- HireMeOS Screen -->
+    <div id="hiremos-screen" class="screen">
+        <div class="hiremos-desktop">
+            <!-- Desktop Icons -->
+            <div class="desktop-icons">
+                <div class="desktop-icon" data-app="resume">
+                    <div class="icon-image doc-icon"></div>
+                    <span class="icon-label">Resume.doc</span>
+                </div>
+                <div class="desktop-icon" data-app="chat">
+                    <div class="icon-image chat-icon"></div>
+                    <span class="icon-label">AshleyChat.exe</span>
+                </div>
+                <div class="desktop-icon" data-app="work">
+                    <div class="icon-image folder-icon"></div>
+                    <span class="icon-label">Work Examples</span>
+                </div>
+                <div class="desktop-icon" data-app="about">
+                    <div class="icon-image web-icon"></div>
+                    <span class="icon-label">AboutMe.html</span>
+                </div>
+                <div class="desktop-icon" data-app="recycle">
+                    <div class="icon-image trash-icon"></div>
+                    <span class="icon-label">Recycle Bin</span>
+                </div>
+            </div>
+
+            <!-- Windows Container -->
+            <div class="windows-container" id="windows-container">
+                <!-- Windows created dynamically -->
+            </div>
+
+            <!-- Taskbar -->
+            <div class="taskbar">
+                <button class="start-button" id="start-btn">
+                    <span class="start-icon"></span>
+                    Start
+                </button>
+                <div class="taskbar-items" id="taskbar-items">
+                    <!-- Active windows shown here -->
+                </div>
+                <div class="system-tray">
+                    <div class="tray-icon cat-icon" title="The Huckleberries are watching"></div>
+                    <div class="tray-clock" id="tray-clock">12:00 PM</div>
+                </div>
+            </div>
+
+            <!-- Start Menu -->
+            <div class="start-menu" id="start-menu">
+                <div class="start-menu-header">
+                    <div class="start-avatar"></div>
+                    <span>Ashley Sepers</span>
+                </div>
+                <div class="start-menu-items">
+                    <div class="start-item" data-app="resume">
+                        <span class="item-icon doc"></span>
+                        Resume
+                    </div>
+                    <div class="start-item" data-app="work">
+                        <span class="item-icon folder"></span>
+                        Work Examples
+                    </div>
+                    <div class="start-item" data-app="chat">
+                        <span class="item-icon chat"></span>
+                        Interview Me
+                    </div>
+                    <div class="start-item" data-app="about">
+                        <span class="item-icon web"></span>
+                        About Me
+                    </div>
+                    <div class="start-divider"></div>
+                    <div class="start-item" data-action="exit">
+                        <span class="item-icon exit"></span>
+                        Exit to Office
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Window Templates (hidden) -->
+    <template id="window-template">
+        <div class="os-window">
+            <div class="window-titlebar">
+                <span class="window-title"></span>
+                <div class="window-controls">
+                    <button class="win-btn minimize">_</button>
+                    <button class="win-btn maximize">□</button>
+                    <button class="win-btn close">&times;</button>
+                </div>
+            </div>
+            <div class="window-menubar">
+                <span>File</span>
+                <span>Edit</span>
+                <span>View</span>
+                <span>Help</span>
+            </div>
+            <div class="window-content"></div>
+            <div class="window-statusbar">Ready</div>
+        </div>
+    </template>
+
+    <!-- Resume Content Template -->
+    <template id="resume-content">
+        <div class="word-processor">
+            <div class="word-toolbar">
+                <button class="tool-btn">B</button>
+                <button class="tool-btn">I</button>
+                <button class="tool-btn">U</button>
+                <span class="toolbar-divider"></span>
+                <select class="font-select">
+                    <option>Times New Roman</option>
+                    <option>Arial</option>
+                    <option>Comic Sans MS</option>
+                </select>
+            </div>
+            <div class="word-document">
+                <div class="wordart-header">ASHLEY SEPERS</div>
+                <p class="resume-tagline">Product Operations | Cross-Functional Leadership | Enablement | AI Adoption</p>
+
+                <div class="resume-contact">
+                    <span>ashley.sepers@gmail.com</span> |
+                    <span>647.574.7721</span> |
+                    <span>linkedin.com/in/ashley-sarahsep</span> |
+                    <span>Ontario / Remote</span>
+                </div>
+
+                <h2 class="resume-section">OH, HELLO!</h2>
+                <p>Nice to meet you - I'm Ashley, a strategic operations leader with 10+ years of experience driving operational and product success through coordination across teams, technical translation, and operational excellence.</p>
+                <p>I navigate ambiguous environments, identify organizational gaps, and build scalable systems that make everyone else's job easier.</p>
+                <p>I joined MainEvent when the team was ~10 people with no formal processes and built the operational infrastructure from scratch - sales operations, training programs, QA processes, and project management frameworks that enabled the team to support <strong>32M+ visits</strong>, <strong>576K+ client staff</strong>, and <strong>Fortune 500 brands</strong> at massive scale.</p>
+
+                <h2 class="resume-section">WHAT MAKES ME DIFFERENT</h2>
+
+                <h3>Hermeneutics Advantage</h3>
+                <p>My background in philosophy (hermeneutics) and social work gives me a unique advantage in both operations and data analytics. I don't just create training - I design learning experiences based on how humans actually process, retain, and apply information.</p>
+
+                <h3>Swiss Army Knife Operator</h3>
+                <p>Comfortable wearing multiple hats and stepping into gaps without being asked. Have served as QA lead, project manager, product operations lead, sales training owner, advisor, and backup account manager - often simultaneously.</p>
+
+                <h3>Self-Taught Technology Adopter</h3>
+                <p>Mastered every system and tool through self-directed learning - from CRM platforms to AI agent development to project management tools. At MainEvent, I was the first person to really take to the AI Agents and became the go-to for everything related to them.</p>
+
+                <h3>Bridge Builder</h3>
+                <p>Translate technical capabilities into business value and user-friendly language. Help engineers understand user challenges. Help business stakeholders understand technical constraints. Create shared understanding across groups that typically struggle to communicate.</p>
+
+                <h2 class="resume-section">EXPERIENCE HIGHLIGHTS</h2>
+
+                <h3>Head of Client Enablement & AI Adoption</h3>
+                <p class="job-meta">Network Ninja (MainEvent) | Jan 2025 - Dec 2025 | Remote</p>
+                <ul>
+                    <li>Built manual testing framework for AI agent product from scratch</li>
+                    <li>Designed 5-phase onboarding methodology for AI agent adoption</li>
+                    <li>Created "Power Prompts" library of enterprise analytical frameworks</li>
+                    <li>Owned EMS Vegas booth presence from concept to execution</li>
+                </ul>
+
+                <h3>Chief of Staff & Head of Sales Enablement</h3>
+                <p class="job-meta">Network Ninja (MainEvent) | Dec 2023 - Dec 2025 | Remote</p>
+                <ul>
+                    <li>Served as sole QA Lead on major client projects</li>
+                    <li>Led Neptune Retail Solutions project end-to-end</li>
+                    <li>Created 30+ customized demo environments annually</li>
+                    <li>Key contributor to 100% of sales wins since 2018</li>
+                </ul>
+
+                <h3>Sales Operations & Enablement Lead</h3>
+                <p class="job-meta">Network Ninja (MainEvent) | Oct 2018 - Dec 2023 | Remote</p>
+                <ul>
+                    <li>Built operational infrastructure from scratch (~10 person team to massive scale)</li>
+                    <li>Reduced new hire ramp time from 90 to 60 days</li>
+                    <li>Managed sales pipeline across multiple CRM platforms</li>
+                </ul>
+
+                <h2 class="resume-section">EDUCATION</h2>
+                <p><strong>Bachelor of Arts - Philosophy (Hermeneutics)</strong><br>University of Guelph</p>
+                <p><strong>Social Service Worker Program</strong><br>George Brown College | GPA: 3.9/4.0</p>
+            </div>
+        </div>
+    </template>
+
+    <!-- About Me Content Template (MySpace Style) -->
+    <template id="about-content">
+        <div class="myspace-page">
+            <div class="myspace-header">
+                <div class="myspace-banner">
+                    <span class="sparkle">★</span> Ashley's Space <span class="sparkle">★</span>
+                </div>
+            </div>
+            <div class="myspace-layout">
+                <div class="myspace-left">
+                    <div class="profile-pic-container">
+                        <img src="assets/photos/profile.jpg" alt="Ashley" class="profile-pic">
+                        <div class="online-status">
+                            <span class="status-dot"></span> Online
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h2>"Gap Filler Extraordinaire"</h2>
+                        <p><strong>Mood:</strong> <span class="mood">Caffeinated ☕</span></p>
+                        <p><strong>Location:</strong> Guelph, Ontario</p>
+                        <p><strong>Status:</strong> Open to opportunities!</p>
+                    </div>
+                    <div class="contact-box">
+                        <h3>Contact Ashley</h3>
+                        <a href="mailto:ashley.sepers@gmail.com" class="contact-link">Send Email</a>
+                        <a href="https://linkedin.com/in/ashley-sarahsep" target="_blank" class="contact-link">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="myspace-right">
+                    <div class="myspace-section">
+                        <h3 class="section-header">About Me</h3>
+                        <div class="about-text">
+                            <p>Oh, hi there! I'm Ashley - the person who sees the gaps between teams and builds the systems to fill them.</p>
+                            <p>I'm a self-taught generalist who figures things out through pattern recognition and asking "why" constantly. People consistently come to me for answers, to work through problems, to test things, and to run ideas by.</p>
+                            <p>My brain gets genuinely excited about digging deeper into the "why" behind data patterns. I'm also pretty funny, unique thinker, and genuinely delightful to work with (their words, not mine... okay, maybe a little mine).</p>
+                        </div>
+                    </div>
+                    <div class="myspace-section">
+                        <h3 class="section-header">Top 8 Friends</h3>
+                        <div class="top-friends">
+                            <div class="friend">
+                                <div class="friend-pic hermeneutics"></div>
+                                <span>Hermeneutics</span>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic jira"></div>
+                                <span>Jira</span>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic pattern"></div>
+                                <span>Pattern Recognition</span>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic coffee"></div>
+                                <span>Coffee</span>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic gertrude-pic"></div>
+                                <span>Gertrude</span>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic gherkin-pic"></div>
+                                <span>Gherkin</span>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic gap-filling"></div>
+                                <span>Gap Filling</span>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic remote"></div>
+                                <span>Remote Work</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myspace-section">
+                        <h3 class="section-header">Who I'd Like to Meet</h3>
+                        <p>Small teams where I know everyone. Places where transparency is real, kindness and competence both matter, and "that's not my job" isn't in the vocabulary. Growth-stage companies where one person can have real impact.</p>
+                    </div>
+                    <div class="myspace-section">
+                        <h3 class="section-header">Interests</h3>
+                        <p><strong>General:</strong> Philosophy, building systems, solving puzzles, The Huckleberries (my cats)</p>
+                        <p><strong>Music:</strong> Lo-fi beats, anything I can work to</p>
+                        <p><strong>Games:</strong> MYST, Oregon Trail, point-and-click adventures</p>
+                        <p><strong>Books:</strong> Anything about how people think and learn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="visitor-counter">
+                <span class="counter-label">Visitors:</span>
+                <span class="counter-digits" id="visitor-count">001337</span>
+            </div>
+        </div>
+    </template>
+
+    <!-- Work Examples Content Template -->
+    <template id="work-content">
+        <div class="file-explorer">
+            <div class="explorer-toolbar">
+                <button class="explorer-btn">Back</button>
+                <button class="explorer-btn">Forward</button>
+                <button class="explorer-btn">Up</button>
+                <div class="address-bar">
+                    <span>C:\Work Examples\</span>
+                </div>
+            </div>
+            <div class="explorer-content">
+                <div class="folder-item" data-folder="neptune">
+                    <div class="folder-icon"></div>
+                    <span>Neptune Project</span>
+                </div>
+                <div class="folder-item" data-folder="ai">
+                    <div class="folder-icon"></div>
+                    <span>AI Adoption</span>
+                </div>
+                <div class="folder-item" data-folder="enablement">
+                    <div class="folder-icon"></div>
+                    <span>Sales Enablement</span>
+                </div>
+            </div>
+            <div class="case-study-view" id="case-study-view" style="display: none;">
+                <div class="case-study-content" id="case-study-content">
+                    <!-- Populated by JS -->
+                </div>
+                <button class="back-to-folders">← Back to Folders</button>
+            </div>
+        </div>
+    </template>
+
+    <!-- Chat Content Template -->
+    <template id="chat-content">
+        <div class="chat-window">
+            <div class="chat-header">
+                <div class="chat-avatar"></div>
+                <div class="chat-user-info">
+                    <span class="chat-username">AshleySepers</span>
+                    <span class="chat-status">Online</span>
+                </div>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message incoming">
+                    <span class="message-text">Oh, hi there! Nice to meet you. I'm Ashley — I'm the person who sees the gaps between teams and builds systems to fill them. What would you like to know?</span>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+            <div class="chat-quick-replies" id="chat-quick-replies">
+                <button class="quick-reply" data-topic="workstyle">Tell me about your work style</button>
+                <button class="quick-reply" data-topic="hermeneutics">What's this "hermeneutics" thing?</button>
+                <button class="quick-reply" data-topic="project">Walk me through a project</button>
+                <button class="quick-reply" data-topic="looking">What are you looking for?</button>
+                <button class="quick-reply" data-topic="fun">Tell me something fun</button>
+            </div>
+        </div>
+    </template>
+
+    <!-- Recycle Bin Content Template -->
+    <template id="recycle-content">
+        <div class="recycle-bin">
+            <div class="recycle-header">
+                <p>These corporate buzzwords and jargon have been permanently deleted from Ashley's vocabulary:</p>
+            </div>
+            <div class="deleted-items">
+                <div class="deleted-item">
+                    <span class="delete-icon">🗑️</span>
+                    <span class="deleted-text">"Leverage synergies"</span>
+                </div>
+                <div class="deleted-item">
+                    <span class="delete-icon">🗑️</span>
+                    <span class="deleted-text">"Circle back"</span>
+                </div>
+                <div class="deleted-item">
+                    <span class="delete-icon">🗑️</span>
+                    <span class="deleted-text">"Move the needle"</span>
+                </div>
+                <div class="deleted-item">
+                    <span class="delete-icon">🗑️</span>
+                    <span class="deleted-text">"Thought leader"</span>
+                </div>
+                <div class="deleted-item">
+                    <span class="delete-icon">🗑️</span>
+                    <span class="deleted-text">"Disruptive innovation"</span>
+                </div>
+                <div class="deleted-item">
+                    <span class="delete-icon">🗑️</span>
+                    <span class="deleted-text">"Low-hanging fruit"</span>
+                </div>
+                <div class="deleted-item">
+                    <span class="delete-icon">🗑️</span>
+                    <span class="deleted-text">"Boil the ocean"</span>
+                </div>
+                <div class="deleted-item">
+                    <span class="delete-icon">🗑️</span>
+                    <span class="deleted-text">"Paradigm shift"</span>
+                </div>
+            </div>
+            <div class="recycle-note">
+                <p><em>Ashley prefers plain language that actually means something. If you want to discuss "leveraging synergies," you might want to look elsewhere. If you want someone who'll tell you what she actually thinks? Let's talk.</em></p>
+            </div>
+        </div>
+    </template>
+
+    <script src="js/conversations.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
