@@ -132,43 +132,52 @@ body {
 @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
 
 /* ===========================================
-   OFFICE SCENE - Oregon Trail II Style
+   OFFICE SCENE - Pixel Art Style
    =========================================== */
 #office-screen {
-    background: var(--brown-darker);
+    background: #e8d4c8;
 }
 
 .office-container {
     flex: 1;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* The illustrated room SVG */
-.room-illustration {
-    position: absolute;
-    inset: 0;
+/* The pixel art room image */
+.room-image-wrapper {
+    position: relative;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.room-illustration svg {
-    width: 100%;
+.room-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
     height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
-/* Clickable hotspots over the illustration */
+/* Clickable hotspots over the image - subtle styling */
 .hotspot {
     position: absolute;
     cursor: pointer;
-    border: 3px solid transparent;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    border-radius: 4px;
+    transition: all 0.2s ease;
 }
 
+/* Subtle hover - just a slight highlight, no big glow */
 .hotspot:hover {
-    border-color: rgba(255, 215, 0, 0.8);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .hotspot:hover .hotspot-label,
@@ -181,139 +190,98 @@ body {
     position: absolute;
     bottom: 100%;
     left: 50%;
-    transform: translateX(-50%) translateY(10px);
+    transform: translateX(-50%) translateY(5px);
     background: var(--cream);
     color: var(--brown-dark);
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-family: var(--font-pixel);
-    font-size: 16px;
-    white-space: nowrap;
-    opacity: 0;
-    transition: all 0.2s ease;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    border: 2px solid var(--brown);
-    margin-bottom: 8px;
-}
-
-/* Hotspot positions */
-.hotspot-bookshelf {
-    left: 3%;
-    top: 15%;
-    width: 14%;
-    height: 45%;
-}
-
-.hotspot-art {
-    left: 22%;
-    top: 8%;
-    width: 12%;
-    height: 18%;
-}
-
-.hotspot-window {
-    right: 8%;
-    top: 5%;
-    width: 16%;
-    height: 30%;
-}
-
-.hotspot-monitor {
-    left: 38%;
-    top: 45%;
-    width: 18%;
-    height: 32%;
-}
-
-.hotspot-coffee {
-    left: 58%;
-    top: 52%;
-    width: 8%;
-    height: 15%;
-}
-
-.hotspot-radio {
-    left: 20%;
-    top: 55%;
-    width: 10%;
-    height: 18%;
-}
-
-.hotspot-chair {
-    right: 5%;
-    top: 45%;
-    width: 18%;
-    height: 38%;
-}
-
-/* ===========================================
-   ANIMATED CATS
-   =========================================== */
-.cat-container {
-    position: absolute;
-    bottom: 18%;
-    left: -100px;
-    width: 80px;
-    height: 50px;
-    z-index: 50;
-    cursor: pointer;
-    pointer-events: auto;
-}
-
-.cat-container.gertrude {
-    animation: catWalkAcross 25s linear infinite;
-    animation-delay: 5s;
-}
-
-.cat-container.gherkin {
-    animation: catWalkAcross 20s linear infinite;
-    animation-delay: 15s;
-    bottom: 20%;
-}
-
-@keyframes catWalkAcross {
-    0% { left: -100px; transform: scaleX(1); }
-    45% { left: calc(100% + 100px); transform: scaleX(1); }
-    45.1% { left: calc(100% + 100px); transform: scaleX(-1); }
-    90% { left: -100px; transform: scaleX(-1); }
-    90.1% { left: -100px; transform: scaleX(1); }
-    100% { left: -100px; transform: scaleX(1); }
-}
-
-.cat-container svg {
-    width: 100%;
-    height: 100%;
-}
-
-.cat-container:hover .cat-label {
-    opacity: 1;
-}
-
-.cat-label {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--cream);
-    color: var(--brown-dark);
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 4px;
     font-family: var(--font-pixel);
     font-size: 14px;
-    opacity: 0;
-    transition: opacity 0.2s;
     white-space: nowrap;
+    opacity: 0;
+    transition: all 0.15s ease;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
     border: 2px solid var(--brown);
+    margin-bottom: 6px;
+    pointer-events: none;
 }
 
-/* Cat walking animation */
-.cat-body {
-    animation: catBob 0.4s ease-in-out infinite;
+/*
+   Hotspot positions - based on pixel art image
+   The image is ~870x1080 aspect ratio (taller than wide)
+   These percentages are relative to the office-container
+*/
+
+/* Monitor - center of image, on the desk */
+.hotspot-monitor {
+    left: 37%;
+    top: 38%;
+    width: 16%;
+    height: 12%;
 }
 
-@keyframes catBob {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-2px); }
+/* Bookshelf - top area behind monitor */
+.hotspot-bookshelf {
+    left: 26%;
+    top: 5%;
+    width: 38%;
+    height: 30%;
+}
+
+/* Radio - on the bookshelf, right side shelf */
+.hotspot-radio {
+    left: 52%;
+    top: 22%;
+    width: 9%;
+    height: 6%;
+}
+
+/* Wall art - left side paintings */
+.hotspot-art {
+    left: 2%;
+    top: 8%;
+    width: 15%;
+    height: 20%;
+}
+
+/* Pink chair - right side of image */
+.hotspot-chair {
+    right: 12%;
+    top: 45%;
+    width: 24%;
+    height: 35%;
+}
+
+/* Gertrude (fluffy gray cat on the pink chair) */
+.hotspot-gertrude {
+    right: 16%;
+    top: 56%;
+    width: 16%;
+    height: 14%;
+}
+
+/* Gherkin (tabby cat in the cardboard box) */
+.hotspot-gherkin {
+    left: 28%;
+    top: 68%;
+    width: 12%;
+    height: 14%;
+}
+
+/* Teapot on desk */
+.hotspot-teapot {
+    left: 56%;
+    top: 46%;
+    width: 8%;
+    height: 8%;
+}
+
+/* Mirror - right wall, golden frame */
+.hotspot-mirror {
+    right: 3%;
+    top: 5%;
+    width: 14%;
+    height: 22%;
 }
 
 /* ===========================================
