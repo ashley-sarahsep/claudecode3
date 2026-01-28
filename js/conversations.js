@@ -392,6 +392,106 @@ const CONVERSATIONS = {
                 { text: "Thanks for sharing", action: "close" }
             ]
         }
+    },
+
+    laptop: {
+        title: "Work Setup",
+        initial: {
+            message: "This laptop has seen a lot of action! Covered in stickers from conferences and projects over the years. It's my daily driver for remote work since 2014.",
+            photo: "default",
+            choices: [
+                { text: "What tools do you use?", next: "tools" },
+                { text: "Tell me about remote work", next: "remote" },
+                { text: "Nice setup!", action: "close" }
+            ]
+        },
+        tools: {
+            message: "Jira for project management, Notion for documentation, Slack for communication. I've also gotten very comfortable with various demo and prototyping tools. I pick up new software quickly - part of being a generalist is becoming proficient in whatever tools the job needs.",
+            photo: "thoughtful",
+            choices: [
+                { text: "What about AI tools?", next: "ai_tools" },
+                { text: "Good to know!", action: "close" }
+            ]
+        },
+        ai_tools: {
+            message: "I've been deep in AI adoption recently - built out testing frameworks, training curricula, and prompt libraries for enterprise AI agents. I'm comfortable with the technology but also very aware of its limitations. Critical thinking about AI is just as important as knowing how to use it.",
+            photo: "thoughtful",
+            choices: [
+                { text: "Interesting perspective", action: "close" }
+            ]
+        },
+        remote: {
+            message: "Remote since 2014! I've got the rhythm down. Clear boundaries, dedicated workspace, good communication practices. The cats are excellent coworkers - though Gherkin does have opinions about my meeting schedule.",
+            photo: "warm",
+            choices: [
+                { text: "Sounds like a good setup!", action: "close" }
+            ]
+        }
+    },
+
+    bookshelf_right: {
+        title: "Collections",
+        initial: {
+            message: "This shelf holds treasures from travels and interests - the globe, teapots, little curiosities. I'm a collector of experiences and stories.",
+            photo: "warm",
+            choices: [
+                { text: "Tell me about the globe", next: "globe_story" },
+                { text: "What's your philosophy on work-life?", next: "worklife" },
+                { text: "Just browsing", action: "close" }
+            ]
+        },
+        globe_story: {
+            message: "I love maps and geography. There's something about understanding how the world connects - trade routes, cultures, history. It's probably related to why I like understanding how organizations work too. Everything is connected.",
+            photo: "thoughtful",
+            choices: [
+                { text: "That's a neat perspective", action: "close" }
+            ]
+        },
+        worklife: {
+            message: "I don't believe in 'work-life balance' as a rigid separation. I believe in work-life integration - where your work aligns with your values and interests. When that happens, the boundaries become more fluid and healthy. It's about finding the right fit.",
+            photo: "thoughtful",
+            choices: [
+                { text: "Wise approach", action: "close" }
+            ]
+        }
+    },
+
+    globe: {
+        title: "Globe",
+        initial: {
+            message: "I've always been fascinated by how the world connects. Different cultures, different ways of solving problems, different perspectives. It reminds me to think broadly.",
+            photo: "thoughtful",
+            choices: [
+                { text: "Have you traveled much?", next: "travel" },
+                { text: "Nice globe!", action: "close" }
+            ]
+        },
+        travel: {
+            message: "I spent some time in London working in international finance. It gave me perspective on how differently organizations can work across cultures. Those experiences shaped how I approach communication and process design now.",
+            photo: "default",
+            choices: [
+                { text: "That sounds valuable", action: "close" }
+            ]
+        }
+    },
+
+    window: {
+        title: "Window",
+        initial: {
+            message: "*You gaze out the window* The light in Guelph, Ontario is lovely today. There's something peaceful about a good workspace with natural light.",
+            photo: "warm",
+            choices: [
+                { text: "Where is Guelph?", next: "guelph" },
+                { text: "Back to exploring", action: "close" }
+            ]
+        },
+        guelph: {
+            message: "About an hour west of Toronto. It's a university town with a great community feel. Perfect for remote work - affordable, walkable, and just the right pace. Plus the coffee shops are excellent.",
+            photo: "warm",
+            choices: [
+                { text: "Sounds nice!", action: "close" }
+            ]
+        }
     }
 };
 
