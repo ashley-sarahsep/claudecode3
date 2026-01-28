@@ -363,6 +363,35 @@ const CONVERSATIONS = {
                 { text: "Thanks for the tip, Gertrude", action: "close" }
             ]
         }
+    },
+
+    mirror: {
+        title: "Reflection",
+        initial: {
+            message: "You catch Ashley's reflection in the ornate mirror. She waves. \"Oh hi! Taking a moment for some self-reflection? I do a lot of that. It's how I stay grounded and keep growing.\"",
+            photo: "warm",
+            choices: [
+                { text: "What drives you?", next: "drives" },
+                { text: "What have you learned about yourself?", next: "learned" },
+                { text: "Just passing through", action: "close" }
+            ]
+        },
+        drives: {
+            message: "I genuinely like making things work better. There's something satisfying about seeing a gap, understanding why it exists, and building something that actually solves it. Not a band-aid, but a real solution. That 'aha' moment when someone says 'oh, that makes so much more sense now' - that's what keeps me going.",
+            photo: "thoughtful",
+            choices: [
+                { text: "What have you learned about yourself?", next: "learned" },
+                { text: "That's inspiring", action: "close" }
+            ]
+        },
+        learned: {
+            message: "That I'm not a specialist - and that's okay. For years I thought I needed to pick a lane. But I've realized my value IS being the person who connects the lanes. Also, I've learned to trust my instincts more. When something feels off about a process or system, there's usually a real reason.",
+            photo: "thoughtful",
+            choices: [
+                { text: "What drives you?", next: "drives" },
+                { text: "Thanks for sharing", action: "close" }
+            ]
+        }
     }
 };
 

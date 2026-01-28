@@ -30,140 +30,58 @@
         </div>
     </div>
 
-    <!-- Main Office Scene -->
+    <!-- Main Office Scene (Oregon Trail II Style) -->
     <div id="office-screen" class="screen">
-        <div class="office-scene">
-            <!-- Background Layer -->
-            <div class="office-background">
-                <!-- Wall -->
-                <div class="wall"></div>
-                <!-- Floor -->
-                <div class="floor"></div>
+        <div class="office-container">
+            <!-- Pixel Art Room Background -->
+            <div class="room-image-wrapper">
+                <img src="assets/backgrounds/office.png" alt="Ashley's Office" class="room-image">
             </div>
 
-            <!-- Furniture Layer -->
-            <div class="furniture-layer">
-                <!-- Wall Unit / Bookshelf -->
-                <div class="clickable bookshelf" data-item="bookshelf" title="Bookshelf">
-                    <div class="bookshelf-frame">
-                        <div class="shelf">
-                            <div class="book book-1"></div>
-                            <div class="book book-2"></div>
-                            <div class="book book-3"></div>
-                            <div class="book book-4"></div>
-                        </div>
-                        <div class="shelf">
-                            <div class="book book-5"></div>
-                            <div class="book book-6"></div>
-                            <div class="trinket"></div>
-                            <div class="book book-7"></div>
-                        </div>
-                        <div class="shelf">
-                            <div class="photo-frame"></div>
-                            <div class="book book-8"></div>
-                            <div class="plant-small"></div>
-                        </div>
-                    </div>
-                    <div class="hover-indicator">Testimonials</div>
-                </div>
+            <!-- Clickable Hotspots (positioned over the image) -->
+            <!-- Monitor - center, on the desk -->
+            <div class="hotspot hotspot-monitor" data-item="monitor">
+                <span class="hotspot-label">Enter Computer</span>
+            </div>
 
-                <!-- Desk with Monitor -->
-                <div class="desk-area">
-                    <div class="desk">
-                        <div class="clickable monitor" data-item="monitor" title="Computer">
-                            <div class="monitor-frame">
-                                <div class="monitor-screen">
-                                    <div class="screen-content">
-                                        <div class="screen-text">HireMeOS</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="monitor-stand"></div>
-                            <div class="hover-indicator">Enter Computer</div>
-                        </div>
-                        <div class="clickable coffee-mug" data-item="coffee" title="Coffee Mug">
-                            <div class="mug"></div>
-                            <div class="steam">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="hover-indicator">Coffee Break</div>
-                        </div>
-                        <div class="keyboard"></div>
-                    </div>
-                    <div class="desk-chair">
-                        <div class="chair-back"></div>
-                        <div class="chair-seat"></div>
-                    </div>
-                </div>
+            <!-- Bookshelf - upper portion, behind monitor -->
+            <div class="hotspot hotspot-bookshelf" data-item="bookshelf">
+                <span class="hotspot-label">Testimonials</span>
+            </div>
 
-                <!-- Cozy Chair -->
-                <div class="clickable cozy-chair" data-item="chair" title="Cozy Chair">
-                    <div class="armchair">
-                        <div class="chair-cushion"></div>
-                        <div class="chair-arm left"></div>
-                        <div class="chair-arm right"></div>
-                    </div>
-                    <div class="hover-indicator">Interview Me</div>
-                </div>
+            <!-- Radio - on the bookshelf shelf -->
+            <div class="hotspot hotspot-radio" data-item="radio">
+                <span class="hotspot-label">Music</span>
+            </div>
 
-                <!-- Radio -->
-                <div class="clickable radio" data-item="radio" title="Radio">
-                    <div class="radio-body">
-                        <div class="radio-speaker"></div>
-                        <div class="radio-dial"></div>
-                        <div class="radio-buttons">
-                            <span></span><span></span><span></span>
-                        </div>
-                    </div>
-                    <div class="hover-indicator">Music</div>
-                </div>
+            <!-- Wall Art - left side paintings -->
+            <div class="hotspot hotspot-art" data-item="art">
+                <span class="hotspot-label">Philosophy</span>
+            </div>
 
-                <!-- Art on Wall -->
-                <div class="clickable wall-art" data-item="art" title="Wall Art">
-                    <div class="frame">
-                        <div class="art-content"></div>
-                    </div>
-                    <div class="hover-indicator">Philosophy</div>
-                </div>
+            <!-- Pink Chair with Gertrude - right side -->
+            <div class="hotspot hotspot-chair" data-item="chair">
+                <span class="hotspot-label">Interview Me</span>
+            </div>
 
-                <!-- Window -->
-                <div class="window-frame">
-                    <div class="window-pane">
-                        <div class="window-light"></div>
-                    </div>
-                </div>
+            <!-- Gertrude (fluffy gray cat on pink chair) -->
+            <div class="hotspot hotspot-gertrude" data-item="gertrude">
+                <span class="hotspot-label">Gertrude</span>
+            </div>
 
-                <!-- The Huckleberries (Cats) -->
-                <div class="clickable cat gherkin" data-item="gherkin" title="Gherkin">
-                    <div class="cat-body short-hair">
-                        <div class="cat-head">
-                            <div class="ear left"></div>
-                            <div class="ear right"></div>
-                            <div class="face">
-                                <div class="eyes"><span></span><span></span></div>
-                            </div>
-                        </div>
-                        <div class="cat-torso"></div>
-                        <div class="cat-tail"></div>
-                    </div>
-                    <div class="hover-indicator">Gherkin</div>
-                </div>
+            <!-- Gherkin (tabby in the box) -->
+            <div class="hotspot hotspot-gherkin" data-item="gherkin">
+                <span class="hotspot-label">Gherkin</span>
+            </div>
 
-                <div class="clickable cat gertrude" data-item="gertrude" title="Gertrude">
-                    <div class="cat-body long-hair">
-                        <div class="cat-head">
-                            <div class="ear left"></div>
-                            <div class="ear right"></div>
-                            <div class="fluff"></div>
-                            <div class="face">
-                                <div class="eyes"><span></span><span></span></div>
-                            </div>
-                        </div>
-                        <div class="cat-torso"></div>
-                        <div class="cat-tail fluffy"></div>
-                    </div>
-                    <div class="hover-indicator">Gertrude</div>
-                </div>
+            <!-- Teapot on desk -->
+            <div class="hotspot hotspot-teapot" data-item="coffee">
+                <span class="hotspot-label">Tea Time</span>
+            </div>
+
+            <!-- Mirror - right wall -->
+            <div class="hotspot hotspot-mirror" data-item="mirror">
+                <span class="hotspot-label">Reflection</span>
             </div>
         </div>
 
@@ -188,6 +106,12 @@
             <div class="dialog-content">
                 <div class="dialog-portrait">
                     <img src="assets/photos/default.jpg" alt="Ashley" id="dialog-photo">
+                    <div class="portrait-placeholder" id="portrait-placeholder">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="35" r="25" fill="#ddd"/>
+                            <ellipse cx="50" cy="85" rx="35" ry="25" fill="#ddd"/>
+                        </svg>
+                    </div>
                 </div>
                 <div class="dialog-text">
                     <p id="dialog-message"></p>
@@ -203,25 +127,65 @@
     <div id="hiremos-screen" class="screen">
         <div class="hiremos-desktop">
             <!-- Desktop Icons -->
-            <div class="desktop-icons">
-                <div class="desktop-icon" data-app="resume">
-                    <div class="icon-image doc-icon"></div>
+            <div class="hiremos-icons">
+                <div class="hiremos-icon" data-app="resume">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 64 64" class="icon-svg">
+                            <rect x="12" y="4" width="40" height="56" fill="#fff" stroke="#333" stroke-width="2"/>
+                            <rect x="16" y="10" width="32" height="4" fill="#000080"/>
+                            <rect x="16" y="18" width="28" height="2" fill="#666"/>
+                            <rect x="16" y="24" width="32" height="2" fill="#666"/>
+                            <rect x="16" y="30" width="24" height="2" fill="#666"/>
+                            <rect x="16" y="36" width="30" height="2" fill="#666"/>
+                            <rect x="16" y="42" width="26" height="2" fill="#666"/>
+                            <rect x="16" y="48" width="32" height="2" fill="#666"/>
+                        </svg>
+                    </div>
                     <span class="icon-label">Resume.doc</span>
                 </div>
-                <div class="desktop-icon" data-app="chat">
-                    <div class="icon-image chat-icon"></div>
+                <div class="hiremos-icon" data-app="chat">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 64 64" class="icon-svg">
+                            <rect x="8" y="8" width="48" height="40" rx="4" fill="#ffeb3b" stroke="#f9a825" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="4" fill="#333"/>
+                            <circle cx="40" cy="24" r="4" fill="#333"/>
+                            <path d="M20 34 Q32 44 44 34" stroke="#333" stroke-width="3" fill="none"/>
+                            <path d="M32 48 L32 56 L24 48" fill="#ffeb3b" stroke="#f9a825" stroke-width="2"/>
+                        </svg>
+                    </div>
                     <span class="icon-label">AshleyChat.exe</span>
                 </div>
-                <div class="desktop-icon" data-app="work">
-                    <div class="icon-image folder-icon"></div>
+                <div class="hiremos-icon" data-app="work">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 64 64" class="icon-svg">
+                            <path d="M8 16 L28 16 L32 8 L56 8 L56 56 L8 56 Z" fill="#f4d03f" stroke="#d4ac0d" stroke-width="2"/>
+                            <rect x="8" y="20" width="48" height="36" fill="#f7dc6f" stroke="#d4ac0d" stroke-width="2"/>
+                        </svg>
+                    </div>
                     <span class="icon-label">Work Examples</span>
                 </div>
-                <div class="desktop-icon" data-app="about">
-                    <div class="icon-image web-icon"></div>
+                <div class="hiremos-icon" data-app="about">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 64 64" class="icon-svg">
+                            <rect x="8" y="8" width="48" height="48" rx="4" fill="#3498db" stroke="#2874a6" stroke-width="2"/>
+                            <circle cx="32" cy="24" r="10" fill="#fff"/>
+                            <rect x="22" y="38" width="20" height="14" rx="2" fill="#fff"/>
+                            <text x="32" y="28" text-anchor="middle" fill="#e74c3c" font-size="12" font-weight="bold">♥</text>
+                        </svg>
+                    </div>
                     <span class="icon-label">AboutMe.html</span>
                 </div>
-                <div class="desktop-icon" data-app="recycle">
-                    <div class="icon-image trash-icon"></div>
+                <div class="hiremos-icon" data-app="recycle">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 64 64" class="icon-svg">
+                            <path d="M16 16 L20 56 L44 56 L48 16 Z" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2"/>
+                            <rect x="14" y="10" width="36" height="6" rx="2" fill="#7f8c8d"/>
+                            <rect x="26" y="6" width="12" height="6" fill="#7f8c8d"/>
+                            <line x1="24" y1="24" x2="26" y2="48" stroke="#7f8c8d" stroke-width="2"/>
+                            <line x1="32" y1="24" x2="32" y2="48" stroke="#7f8c8d" stroke-width="2"/>
+                            <line x1="40" y1="24" x2="38" y2="48" stroke="#7f8c8d" stroke-width="2"/>
+                        </svg>
+                    </div>
                     <span class="icon-label">Recycle Bin</span>
                 </div>
             </div>
@@ -241,7 +205,7 @@
                     <!-- Active windows shown here -->
                 </div>
                 <div class="system-tray">
-                    <div class="tray-icon cat-icon" title="The Huckleberries are watching"></div>
+                    <div class="tray-icon cat-tray" title="The Huckleberries are watching">🐱</div>
                     <div class="tray-clock" id="tray-clock">12:00 PM</div>
                 </div>
             </div>
@@ -254,24 +218,24 @@
                 </div>
                 <div class="start-menu-items">
                     <div class="start-item" data-app="resume">
-                        <span class="item-icon doc"></span>
+                        <span class="item-icon">📄</span>
                         Resume
                     </div>
                     <div class="start-item" data-app="work">
-                        <span class="item-icon folder"></span>
+                        <span class="item-icon">📁</span>
                         Work Examples
                     </div>
                     <div class="start-item" data-app="chat">
-                        <span class="item-icon chat"></span>
+                        <span class="item-icon">💬</span>
                         Interview Me
                     </div>
                     <div class="start-item" data-app="about">
-                        <span class="item-icon web"></span>
+                        <span class="item-icon">👤</span>
                         About Me
                     </div>
                     <div class="start-divider"></div>
                     <div class="start-item" data-action="exit">
-                        <span class="item-icon exit"></span>
+                        <span class="item-icon">🚪</span>
                         Exit to Office
                     </div>
                 </div>
@@ -287,7 +251,7 @@
                 <div class="window-controls">
                     <button class="win-btn minimize">_</button>
                     <button class="win-btn maximize">□</button>
-                    <button class="win-btn close">&times;</button>
+                    <button class="win-btn close">×</button>
                 </div>
             </div>
             <div class="window-menubar">
@@ -391,14 +355,20 @@
             <div class="myspace-layout">
                 <div class="myspace-left">
                     <div class="profile-pic-container">
-                        <img src="assets/photos/profile.jpg" alt="Ashley" class="profile-pic">
+                        <img src="assets/photos/profile.jpg" alt="Ashley" class="profile-pic" onerror="this.style.display='none'">
+                        <div class="profile-placeholder">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="35" r="25" fill="#666"/>
+                                <ellipse cx="50" cy="85" rx="35" ry="25" fill="#666"/>
+                            </svg>
+                        </div>
                         <div class="online-status">
                             <span class="status-dot"></span> Online
                         </div>
                     </div>
                     <div class="profile-info">
                         <h2>"Gap Filler Extraordinaire"</h2>
-                        <p><strong>Mood:</strong> <span class="mood">Caffeinated ☕</span></p>
+                        <p><strong>Mood:</strong> <span class="mood">Caffeinated</span></p>
                         <p><strong>Location:</strong> Guelph, Ontario</p>
                         <p><strong>Status:</strong> Open to opportunities!</p>
                     </div>
@@ -487,15 +457,15 @@
             </div>
             <div class="explorer-content">
                 <div class="folder-item" data-folder="neptune">
-                    <div class="folder-icon"></div>
+                    <div class="folder-icon-img">📁</div>
                     <span>Neptune Project</span>
                 </div>
                 <div class="folder-item" data-folder="ai">
-                    <div class="folder-icon"></div>
+                    <div class="folder-icon-img">📁</div>
                     <span>AI Adoption</span>
                 </div>
                 <div class="folder-item" data-folder="enablement">
-                    <div class="folder-icon"></div>
+                    <div class="folder-icon-img">📁</div>
                     <span>Sales Enablement</span>
                 </div>
             </div>
@@ -512,7 +482,7 @@
     <template id="chat-content">
         <div class="chat-window">
             <div class="chat-header">
-                <div class="chat-avatar"></div>
+                <div class="chat-avatar">👩‍💻</div>
                 <div class="chat-user-info">
                     <span class="chat-username">AshleySepers</span>
                     <span class="chat-status">Online</span>
